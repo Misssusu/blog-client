@@ -7,19 +7,29 @@ const URL = {
     DELETE: '/blog/:blogId'
 }
 export default {
-    getBlogs({page=1,userId,atIndex} = {page: 1}){
+    //获取博客
+    getBlogs({page=1,userId,atIndex} = {page: 1}){  //atIndex是否设置在首页
         return request(URL.GET_LIST, 'GET', {page,userId,atIndex})
     },
-    getIndexBlogs({page=1}={page: 1}){
+    //获取设置在首页的博客
+    getIndexBlogs({page=1} = {page: 1}){
         return this.getBlogs({page, atIndex: true})
     },
-    getBlogsByUserId(userId, {page=1,atIndex} = {page: 1}){
+    //获取某个用户所有的博客
+    getBlogsByUserId(userId, {page=1, atIndex} = {page: 1}){
         return this.getBlogs({userId, page, atIndex})
     },
+    //获取详情
     getDetail({blogId}) {
         return request(URL.GET_DETAIL.replace(':blogId', blogId))
     },
-    updateBlog(){
-
+    updateBlog({blogId}, {title, content, description, atIndex}){
+        return request(URL.UPDATE.replace(':blogId', blogId), 'PATCH', {title, content, description, atIndex})
+    },
+    deleteBlog({blogId}){
+        return request(URL.DELETE.replace(':blogId', blogId), 'DELETE')
+    },
+    createBlog({title = '', content = '', description = '', atIndex = false} = {title:'', content:'', description:'', atIndex:false}){
+        return request(URL.CREATE, 'POST', {title, content, description, atIndex})
     }
 }

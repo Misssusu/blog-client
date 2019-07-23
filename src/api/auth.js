@@ -1,10 +1,10 @@
 import request from '@/helpers/request';
 const URL = {
     REGISTER: '/auth/register',
-    LOGIN: 'auth/login',
+    LOGIN: '/auth/login',
     LOGOUT: '/auth/logout',
     GET_INFO: '/auth'
-}
+};
 export default {
     register({username,password}){
         return request(URL.REGISTER, 'POST', {username,password})
@@ -18,4 +18,4 @@ export default {
     getInfo() {
         return request(URL.GET_INFO)
     }
-}
+};
