@@ -1,8 +1,10 @@
 <template>
   <div id="app">
-    <Header></Header>
-    <router-view />
-    <Footer></Footer>
+    <Header id="header"></Header>
+    <main id="main">
+      <router-view />
+    </main>
+    <Footer id="footer"></Footer>
   </div>
 </template>
 <script>
@@ -17,21 +19,30 @@ export default {
 };
 </script>
 <style lang="scss">
-#app {
-  font-family: "Avenir", Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-}
-#nav {
-  padding: 30px;
-  a {
-    font-weight: bold;
-    color: #2c3e50;
-    &.router-link-exact-active {
-      color: #42b983;
+  @import "./assets/common.scss";
+  #app {
+    display: grid;
+    grid-template-columns: 12% auto 12%;
+    grid-template-rows: auto 1fr auto;
+    grid-template-areas: "header header header"
+    ".      main  ."
+    "footer footer footer";
+
+    #header {
+      grid-area: header;
+      padding-left: 12%;
+      padding-right: 12%;
     }
+
+    #main {
+      grid-area: main;
+    }
+
+    #footer {
+      grid-area: footer;
+      padding-left: 12%;
+      padding-right: 12%;
+    }
+
   }
-}
 </style>
