@@ -16,13 +16,13 @@
   </header>
 </template>
 <script>
-  export default {
-    data() {
-      return {
-        isLogin: true
-      }
-    }
+export default {
+  data() {
+    return {
+      isLogin: true
+    };
   }
+};
 </script>
 <style lang="scss">
   @import "../assets/base.scss";
