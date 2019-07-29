@@ -11,7 +11,11 @@
     <template v-if="isLogin">
       <h1>Let's share</h1>
       <i class="edit el-icon-edit"></i>
-      <img class="avatar" src="http://cn.gravatar.com/avatar/1?s=128&d=identicon" alt="">
+      <img
+        class="avatar"
+        src="http://cn.gravatar.com/avatar/1?s=128&d=identicon"
+        alt=""
+      />
     </template>
   </header>
 </template>
@@ -25,13 +29,13 @@ export default {
 };
 </script>
 <style lang="scss">
-  @import "../assets/base.scss";
-  @import "../assets/common.scss";
-  header.no-login {
-    padding: 0 12% 30px 12%;
-    background: $bgColor;
-    display: grid;
-    justify-items: center;
+@import "../assets/base.scss";
+@import "../assets/common.scss";
+header.no-login {
+  padding: 0 12% 30px 12%;
+  background: $bgColor;
+  display: grid;
+  justify-items: center;
 
   h1 {
     color: #fff;
@@ -52,33 +56,33 @@ export default {
   button {
     margin: 20px 5px 0;
   }
+}
+
+header.login {
+  display: flex;
+  align-items: center;
+  background: $bgColor;
+
+  h1 {
+    margin: 0;
+    padding: 0;
+    color: #fff;
+    font-size: 40px;
+    text-transform: uppercase;
+    flex: 1;
   }
 
-  header.login {
-    display: flex;
-    align-items: center;
-    background: $bgColor;
-
-    h1 {
-      margin: 0;
-      padding: 0;
-      color: #fff;
-      font-size: 40px;
-      text-transform: uppercase;
-      flex: 1;
-    }
-
-    .edit {
-      color: #fff;
-      font-size: 30px;
-    }
-
-    .avatar {
-      width: 40px;
-      height: 40px;
-      border: 1px solid #fff;
-      border-radius: 50%;
-      margin-left: 15px;
-    }
+  .edit {
+    color: #fff;
+    font-size: 30px;
   }
+
+  .avatar {
+    width: 40px;
+    height: 40px;
+    border: 1px solid #fff;
+    border-radius: 50%;
+    margin-left: 15px;
+  }
+}
 </style>
