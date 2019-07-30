@@ -28,31 +28,31 @@ export default {
     ".      main  ."
     "footer footer footer";
 
-    #header {
-      grid-area: header;
-      padding-left: 12%;
-      padding-right: 12%;
-    }
+  #header {
+    grid-area: header;
+    padding-left: 12%;
+    padding-right: 12%;
+  }
 
-    #main {
-      grid-area: main;
-    }
+  #main {
+    grid-area: main;
+  }
 
-    #footer {
-      grid-area: footer;
-      padding-left: 12%;
-      padding-right: 12%;
-    }
-    @media (max-width: 768px) {
-      #app {
-        grid-template-columns: 10px auto 10px;
+  #footer {
+    grid-area: footer;
+    padding-left: 12%;
+    padding-right: 12%;
+  }
+  @media (max-width: 768px) {
+    #app {
+      grid-template-columns: 10px auto 10px;
 
-        #header, #footer {
-          padding-left: 10px;
-          padding-right: 10px;
-        }
+      #header,
+      #footer {
+        padding-left: 10px;
+        padding-right: 10px;
       }
     }
-
   }
+}
 </style>
