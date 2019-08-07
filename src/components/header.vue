@@ -20,13 +20,22 @@
   </header>
 </template>
 <script>
-export default {
-  data() {
-    return {
-      isLogin: true
-    };
-  }
-};
+  import {mapGetters, mapActions} from 'vuex';
+  export default {
+    data() {
+      return {
+        isLogin: true
+      };
+    },
+    created() {   //生命周期，在实例创建完成后被立即调用
+      this.checkLogin()
+    },
+    methods: {
+      ...mapActions([
+        'checkLogin'
+      ])
+    }
+  };
 </script>
 <style lang="scss">
 @import "../assets/base.scss";
