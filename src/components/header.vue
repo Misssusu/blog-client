@@ -1,5 +1,5 @@
 <template>
-  <header class="{login : isLogin, no-login : !isLogin}">
+  <header :class="{login : isLogin, 'no-login' : !isLogin}">
     <template v-if="!isLogin">
       <h1>Let's share</h1>
       <p>精品博客汇聚</p>
@@ -11,21 +11,31 @@
     <template v-if="isLogin">
       <h1>Let's share</h1>
       <i class="edit el-icon-edit"></i>
-      <img
-        class="avatar"
-        src="http://cn.gravatar.com/avatar/1?s=128&d=identicon"
-        alt=""
-      />
+      <div class="user">
+        <div class="dropdown">
+          <img class="avatar" :src="user.avatar" :alt="user.username" :title="user.username">
+        </div>
+        <div class="dropdown-menu">
+          <ul>
+            <li><router-link to="my">我的</router-link></li>
+            <li><a href="#" >注销</a></li>
+          </ul>
+        </div>
+      </div>
     </template>
   </header>
 </template>
 <script>
-  import {mapGetters, mapActions} from 'vuex';
+  import { mapGetters, mapActions } from 'vuex';
   export default {
     data() {
-      return {
-        isLogin: true
-      };
+      return {};
+    },
+    computed: {
+      ...mapGetters([
+        'isLogin',
+        'user'
+      ])
     },
     created() {   //生命周期，在实例创建完成后被立即调用
       this.checkLogin()
@@ -39,7 +49,6 @@
 </script>
 <style lang="scss">
 @import "../assets/base.scss";
-@import "../assets/common.scss";
 header.no-login {
   padding: 0 12% 30px 12%;
   background: $bgColor;
@@ -92,6 +101,42 @@ header.login {
     border: 1px solid #fff;
     border-radius: 50%;
     margin-left: 15px;
+  }
+  .user {
+    position: relative;
+
+    ul {
+      display: none;
+      position: absolute;
+      right: 0;
+      list-style: none;
+      border: 1px solid #eaeaea;
+      margin:0;
+      padding: 0;
+      background-color: #fff;
+
+      a {
+        text-decoration: none;
+        color: #333;
+        font-size: 12px;
+        display: block;
+        padding: 5px 10px;
+
+        &:hover {
+          background-color: #eaeaea;
+        }
+      }
+
+    }
+
+    &:hover ul {
+      display: block;
+    }
+  }
+  .user :before {
+    content: '';
+    border-top: 10px solid red;
+    display: block;
   }
 }
 </style>
