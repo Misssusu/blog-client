@@ -15,12 +15,16 @@
         <div class="dropdown">
           <img class="avatar" :src="user.avatar" :alt="user.username" :title="user.username">
         </div>
-        <div class="dropdown-menu">
-          <ul>
-            <li><router-link to="my">我的</router-link></li>
-            <li><a href="#" >注销</a></li>
-          </ul>
-        </div>
+        <ul class="dropdown-menu">
+          <li><router-link to="my">
+            <i class="iconfont">&#xe61b;</i>
+            <span>我的</span>
+          </router-link></li>
+          <li><a href="#" >
+            <i class="iconfont exit">&#xe64b;</i>
+            <span>注销</span>
+          </a></li>
+        </ul>
       </div>
     </template>
   </header>
@@ -49,6 +53,22 @@
 </script>
 <style lang="scss">
 @import "../assets/base.scss";
+@font-face {
+  font-family: 'iconfont';  /* project id 1341786 */
+  src: url('//at.alicdn.com/t/font_1341786_t91t9ur1d.eot');
+  src: url('//at.alicdn.com/t/font_1341786_t91t9ur1d.eot?#iefix') format('embedded-opentype'),
+  url('//at.alicdn.com/t/font_1341786_t91t9ur1d.woff2') format('woff2'),
+  url('//at.alicdn.com/t/font_1341786_t91t9ur1d.woff') format('woff'),
+  url('//at.alicdn.com/t/font_1341786_t91t9ur1d.ttf') format('truetype'),
+  url('//at.alicdn.com/t/font_1341786_t91t9ur1d.svg#iconfont') format('svg');
+}
+.iconfont{
+  font-family:"iconfont" !important;
+  font-size:16px;font-style:normal;
+  -webkit-font-smoothing: antialiased;
+  -webkit-text-stroke-width: 0.2px;
+  -moz-osx-font-smoothing: grayscale;
+}
 header.no-login {
   padding: 0 12% 30px 12%;
   background: $bgColor;
@@ -100,27 +120,54 @@ header.login {
     height: 40px;
     border: 1px solid #fff;
     border-radius: 50%;
-    margin-left: 15px;
+    vertical-align: middle;
   }
   .user {
     position: relative;
-
-    ul {
-      display: none;
+    .dropdown {
+      margin: 8px 24px 8px 16px;
+    }
+    .dropdown:before {
+      content: '';
+      box-sizing: border-box;
+      border-left: 5px solid transparent;
+      border-right: 5px solid transparent;
+      border-top: 7px solid #fff;
       position: absolute;
-      right: 0;
+      top: 29px;
+      right: 6px;
+    }
+    .dropdown-menu {
+      display: none;
+      min-width: 105px;
+      border-radius: 0 0 4px 4px;
+      position: absolute;
       list-style: none;
+      box-shadow: 0 2px 8px rgba(0,0,0,.1);
       border: 1px solid #eaeaea;
-      margin:0;
+      margin: 1px 0;
       padding: 0;
       background-color: #fff;
-
+      i {
+        color: $bgColor;
+        font-size: 21px;
+        vertical-align: middle;
+        margin-right: 15px;
+      }
+      .exit {
+        font-weight: bold;
+      }
+      span {
+        vertical-align: middle;
+        font-size: 14px;
+      }
       a {
         text-decoration: none;
         color: #333;
         font-size: 12px;
         display: block;
-        padding: 5px 10px;
+        padding: 10px 20px;
+        line-height: 30px;
 
         &:hover {
           background-color: #eaeaea;
@@ -132,11 +179,6 @@ header.login {
     &:hover ul {
       display: block;
     }
-  }
-  .user :before {
-    content: '';
-    border-top: 10px solid red;
-    display: block;
   }
 }
 </style>
