@@ -1,7 +1,6 @@
 <template>
-  <div class="register">
-    <h1>注册页面</h1>
-    <p>注册注册</p>
+  <div id="signin">
+    <h1>登录页面</h1>
   </div>
 </template>
 <script src="./template.js"></script>

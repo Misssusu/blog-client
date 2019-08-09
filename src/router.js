@@ -1,10 +1,9 @@
 import Vue from "vue";
 import Router from "vue-router";
-import Home from "./views/Home.vue";
 import Index from "@/views/Index/template.vue";
-import Login from "@/views/Login/template.vue";
-import My from "@/views/My/template.vue";
-import Register from "@/views/Register/template.vue";
+import SignIn from "@/views/SignIn/template.vue";
+import Profile from "@/views/Profile/template.vue";
+import SignUp from "@/views/SignUp/template.vue";
 import User from "@/views/User/template.vue";
 import Edit from "@/views/Edit/template.vue";
 import Detail from "@/views/Detail/template.vue";
@@ -26,16 +25,16 @@ export default new Router({
       component: Index
     },
     {
-      path: "/login",
-      component: Login
+      path: "/signin",
+      component: SignIn
     },
     {
-      path: "/my",
-      component: My
+      path: "/profile",
+      component: Profile
     },
     {
-      path: "/register",
-      component: Register
+      path: "/SignUp",
+      component: SignUp
     },
     {
       path: "/user",

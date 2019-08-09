@@ -4,8 +4,12 @@
       <h1>Let's share</h1>
       <p>精品博客汇聚</p>
       <div class="btns">
-        <el-button>立即登录</el-button>
-        <el-button>注册账号</el-button>
+        <router-link to="/signin">
+          <el-button>立即登录</el-button>
+        </router-link>
+        <router-link to="/signup">
+          <el-button>注册账号</el-button>
+        </router-link>
       </div>
     </template>
     <template v-if="isLogin">
@@ -16,13 +20,13 @@
           <img class="avatar" :src="user.avatar" :alt="user.username" :title="user.username">
         </div>
         <ul class="dropdown-menu">
-          <li><router-link to="my">
+          <li><router-link to="profile">
             <i class="iconfont">&#xe61b;</i>
             <span>我的</span>
           </router-link></li>
           <li><a href="#" >
             <i class="iconfont exit">&#xe64b;</i>
-            <span>注销</span>
+            <span @click="onLogout">注销</span>
           </a></li>
         </ul>
       </div>
@@ -46,8 +50,12 @@
     },
     methods: {
       ...mapActions([
-        'checkLogin'
-      ])
+        'checkLogin',
+        'logout'
+      ]),
+      onLogout(){
+        this.logout()
+      }
     }
   };
 </script>
@@ -124,6 +132,7 @@ header.login {
   }
   .user {
     position: relative;
+    cursor: pointer;
     .dropdown {
       margin: 8px 24px 8px 16px;
     }
@@ -145,7 +154,7 @@ header.login {
       list-style: none;
       box-shadow: 0 2px 8px rgba(0,0,0,.1);
       border: 1px solid #eaeaea;
-      margin: 1px 0;
+      margin: 2px 0;
       padding: 0;
       background-color: #fff;
       i {
