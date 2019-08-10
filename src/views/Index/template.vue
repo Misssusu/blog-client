@@ -13,6 +13,7 @@
     <section>
       <el-pagination
               @current-change="onPageChange"
+              :current-page="page"
               layout="prev, pager, next"
               :total="total">
       </el-pagination>
