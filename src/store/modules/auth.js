@@ -30,6 +30,7 @@ const actions = {
         return res.data;
     },
     async logout({commit}){
+        console.log('logout')
         await auth.logout();
         commit('setUser', {user: null});
         commit('setLogin', {isLogin: false});
