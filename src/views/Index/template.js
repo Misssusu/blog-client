@@ -1,11 +1,31 @@
-import request from "@/helpers/request.js";
-import auth from "@/api/auth.js";
 import blog from "@/api/blog.js";
 
-window.request = request;
-window.auth = auth;
 window.blog = blog;
 
 export default {
-    name: 'Index'
+    data() {
+        return {
+            blogs: [],
+            total: 0,
+            page: 1
+        }
+    },
+    created() {   //生命周期函数，模板还没有渲染，数据已经完成时
+        blog.getIndexBlogs().then(res => {
+            console.log(res)
+            this.blogs = res.data;
+            this.total = res.total;
+            this.page = res.page;
+        })
+    },
+    methods: {
+        onPageChange(newPage) {
+            console.log(newPage)
+            blog.getIndexBlogs({ page: newPage }).then(res => {
+                this.blogs = res.data;
+                this.total = res.total;
+                this.page = res.page;
+            })
+        }
+    }
 }
