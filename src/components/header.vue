@@ -22,7 +22,7 @@
           <img class="avatar" :src="user.avatar" :alt="user.username" :title="user.username">
         </div>
         <ul class="dropdown-menu">
-          <li><router-link to="profile">
+          <li><router-link to="/profile">
             <i class="iconfont">&#xe61b;</i>
             <span>我的</span>
           </router-link></li>
@@ -56,7 +56,9 @@
         'logout'
       ]),
       onLogout(){
-        this.logout()
+        this.logout().then( res => {
+          this.$router.push('/')
+        })
       }
     }
   };

@@ -10,7 +10,7 @@ export default {
     },
     created() {
         this.userId = this.$route.params.userId;
-        this.page = this.$route.query.page || 1;
+        this.page = parseInt(this.$route.query.page) || 1;
         blog.getBlogsByUserId(this.userId, { page: this.page})
             .then( res => {
                 console.log(res);
