@@ -4,8 +4,10 @@ import router from "./router";
 import store from "./store";
 import Element from 'element-ui';
 import 'element-ui/lib/theme-chalk/index.css';
+import Util from "./helpers/util";
 
 Vue.use(Element);
+Vue.use(Util);
 Vue.config.productionTip = false;
 
 new Vue({

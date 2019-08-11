@@ -1,5 +1,5 @@
 <template>
-  <div id="my">
+  <div id="profile">
     <section class="user-info">
       <img src="http://cn.gravatar.com/avatar/1?s=128&d=identicon" alt="">
       <h3>用户名</h3>
