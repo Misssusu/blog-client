@@ -1,6 +1,6 @@
 <template>
   <footer>
-    <p>© xiedaimala.com 2018 wechat: xiedaimala01</p>
+    <p>git@github.com:Misssusu/blog-client.git</p>
   </footer>
 </template>
 <script>

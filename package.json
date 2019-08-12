@@ -5,7 +5,8 @@
   "scripts": {
     "serve": "vue-cli-service serve",
     "build": "vue-cli-service build",
-    "lint": "vue-cli-service lint"
+    "lint": "vue-cli-service lint",
+    "upload": "npm run build; cd dist; git init; git add .; git commit -am \"init\"; git remote add origin git@github.com:Misssusu/blog-client-preview.git; git push -f origin master;"
   },
   "dependencies": {
     "axios": "^0.19.0",

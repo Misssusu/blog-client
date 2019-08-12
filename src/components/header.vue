@@ -22,14 +22,18 @@
           <img class="avatar" :src="user.avatar" :alt="user.username" :title="user.username">
         </div>
         <ul class="dropdown-menu">
-          <li><router-link to="/profile">
-            <i class="iconfont">&#xe61b;</i>
-            <span>我的</span>
-          </router-link></li>
-          <li><a href="#" >
-            <i class="iconfont exit">&#xe64b;</i>
-            <span @click="onLogout">注销</span>
-          </a></li>
+          <li>
+            <router-link to="/profile">
+              <i class="iconfont">&#xe61b;</i>
+              <span>我的</span>
+            </router-link>
+          </li>
+          <li>
+            <a href="#" @click="onLogout">
+              <i class="iconfont exit">&#xe64b;</i>
+              <span>注销</span>
+            </a>
+          </li>
         </ul>
       </div>
     </template>
