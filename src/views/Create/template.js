@@ -2,14 +2,14 @@ import blog from "@/api/blog.js"
 import {Message} from "element-ui";
 
 export default {
-    data() {
-        return {
-            title: '',
-            description: '',
-            content: '',
-            atIndex: ''
-        }
-    },
+  data() {
+    return {
+      title: "",
+      description: "",
+      content: "",
+      atIndex: ""
+    };
+  },
     methods: {
         onCreate() {
             if(this.title === '' || this.description === '' || this.content === ''){
