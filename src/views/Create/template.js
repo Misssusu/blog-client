@@ -1,5 +1,5 @@
-import blog from "@/api/blog.js"
-import {Message} from "element-ui";
+import blog from "@/api/blog.js";
+import { Message } from "element-ui";
 
 export default {
   data() {
