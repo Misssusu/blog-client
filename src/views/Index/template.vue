@@ -22,4 +22,3 @@
 </template>
 <script src="./template.js"></script>
 <style lang="scss" src="./template.scss"></style>
-
