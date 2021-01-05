@@ -9,7 +9,7 @@
     "upload": "npm run build; cd dist; git init; git add .; git commit -am \"init\"; git remote add origin git@github.com:Misssusu/blog-client-preview.git; git push -f origin master;"
   },
   "dependencies": {
-    "axios": "^0.19.0",
+    "axios": "^0.21.1",
     "core-js": "^2.6.5",
     "element-ui": "^2.10.1",
     "leancloud-storage": "^3.15.0",
