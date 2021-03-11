@@ -1,59 +1,10 @@
 import Vue from "vue";
 import Router from "vue-router";
-// import Index from "@/views/Index/template.vue";
-// import SignIn from "@/views/SignIn/template.vue";
-// import Profile from "@/views/Profile/template.vue";
-// import SignUp from "@/views/SignUp/template.vue";
-// import User from "@/views/User/template.vue";
-// import Edit from "@/views/Edit/template.vue";
-// import Detail from "@/views/Detail/template.vue";
-// import Create from "@/views/Create/template.vue";
 import store from "./store";
 window.store = store;
 Vue.use(Router);
 
-// const router =  new Router({
-//   // mode: "history",
-//   base: process.env.BASE_URL,
-//   routes: [
-//     {
-//       path: "/",
-//       component: Index
-//     },
-//     {
-//       path: "/signin",
-//       component: SignIn
-//     },
-//     {
-//       path: "/profile",
-//       component: Profile,
-//       meta: { requiresAuth: true }
-//     },
-//     {
-//       path: "/signUp",
-//       component: SignUp
-//     },
-//     {
-//       path: "/user/:userId",
-//       component: User
-//     },
-//     {
-//       path: "/edit/:blogId",
-//       component: Edit,
-//       meta: { requiresAuth: true }
-//     },
-//     {
-//       path: "/detail/:blogId",
-//       component: Detail,
-//       meta: { requiresAuth: true }
-//     },
-//     {
-//       path: "/create",
-//       component: Create,
-//       meta: { requiresAuth: true } //需要登陆后
-//     }
-//   ]
-// });
+
 const router =  new Router({
   routes: [
     {
